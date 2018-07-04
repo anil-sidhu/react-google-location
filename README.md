@@ -50,3 +50,16 @@ export default HomeComponent;
 |   apiKey    | Yes     | string   |      null         | need to get from google place api and pass as string. if key is invalid or empty result be b not found                                                                 |
 |   language    | optional     | string   |      en         | language will change the lanugae of search result it will support all lanugage which is suppored by google place api for help link is here  [Language suppored by google](https://developers.google.com/maps/faq#languagesupport)    |                                                     |
 |   country    | optional     | object   |      en         | country prop will change the country where you want to search .you can add 5 country for filter.  |
+
+
+### Use multiple languages
+
+Pass key and value pair in the country object like this ```` country={in|country:pr|country:vi|country:gu|country:mp}  ````
+
+
+### Get Api Key 
+
+click [here](https://developers.google.com/places/web-service/get-api-key)
+click on the GET A KEY button 
+now select a project or create new porject.
+Click on the Next and your key is enabled. You can copy this is key and pass as a apikey :)
