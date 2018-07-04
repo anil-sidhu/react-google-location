@@ -40,4 +40,11 @@ export default HomeComponent;
 
 ```javascript
 
+### Props
+
+| Name          | Required | Type     |  Description                                                                                                                  |
+|-----------------|----------|----------|------------------------------------------------------------------------------------------------------------------------------|
+|   apiKey    | Yes     | string   | Get google place api key and pass as a string . if key is invalid or empty result will be not found                                                                 |
+
+
 
