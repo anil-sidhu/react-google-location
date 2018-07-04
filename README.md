@@ -38,13 +38,12 @@ class HomeComponent extends Component {
 
 export default HomeComponent;
 
-```javascript
+````
 
 ### Props
 
-| Name          | Required | Type     |  Description                                                                                                                  |
-|-----------------|----------|----------|------------------------------------------------------------------------------------------------------------------------------|
-|   apiKey    | Yes     | string   | Get google place api key and pass as a string . if key is invalid or empty result will be not found                                                                 |
 
-
+| Name          | Required | Type     | Default value | Description                                                                                                                  |
+|-----------------|----------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------|
+|   apiKey    | Yes     | string   |      null         | need to get from google place api and pass as string. if key is invalid or empty result be b not found                                                                 |
 
