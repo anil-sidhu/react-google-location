@@ -48,9 +48,5 @@ export default HomeComponent;
 | Name          | Required | Type     | Default value | Description                                                                                                                  |
 |-----------------|----------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------|
 |   apiKey    | Yes     | string   |      null         | need to get from google place api and pass as string. if key is invalid or empty result be b not found                                                                 |
-
-
-| Name          | Required | Type     | Default value | Description                                                                                                                  |
-|-----------------|----------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------|
 |   language    | optional     | string   |      en         | language will change the lanugae of search result it will support all lanugage which is suppored by google place api for help link is here  [Language suppored by google](https://developers.google.com/maps/faq#languagesupport)    |                                                     |
-|   country    | optional     | object   |      en         | country prop will change the country where you want to search .you can add 5 country for filter. For example: country={:us|country:pr|country:vi|country:gu|country:mp}     |
+|   country    | optional     | object   |      en         | country prop will change the country where you want to search .you can add 5 country for filter.  |
