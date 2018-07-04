@@ -8,7 +8,9 @@ Install the library:
 ## Import and use React google location
 Import GoogleCompoent from module from package 
 
-```javascript import { GoogleComponent } from 'react-google-location' 
+```javascript 
+
+import { GoogleComponent } from 'react-google-location' 
 
 //... 
 import React, { Component } from 'react';
@@ -46,4 +48,9 @@ export default HomeComponent;
 | Name          | Required | Type     | Default value | Description                                                                                                                  |
 |-----------------|----------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------|
 |   apiKey    | Yes     | string   |      null         | need to get from google place api and pass as string. if key is invalid or empty result be b not found                                                                 |
+
+
+| Name          | Required | Type     | Default value | Description                                                                                                                  |
+|-----------------|----------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------|
+|   language    | optional     | string   |      en         | language key willchange the lanugae of search result it will support all lanugage which is suppored by google place api for help link is here  [Language suppored by google](https://developers.google.com/maps/faq#languagesupport)                                                                 |
 
