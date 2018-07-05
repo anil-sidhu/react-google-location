@@ -30,7 +30,13 @@ class HomeComponent extends Component {
   render() {
     return (
       <div >
-        <GoogleComponent apiKey={API_KEY} language={'ta'} country={'country:in'} onChange={(e) => { this.setState({ place: e }) }} />
+         <GoogleComponent
+         
+          apiKey={API_KEY}
+          language={'en'}
+          country={'country:in|country:us'}
+          coordinates={true}
+          onChange={(e) => { this.setState({ place: e }) }} />
       </div>
 
     )
@@ -50,6 +56,7 @@ export default HomeComponent;
 |   apiKey    | Yes     | string   |      null         | need to get from google place api and pass as string. if key is invalid or empty result be b not found                                                                 |
 |   language    | optional     | string   |      en         | language will change the lanugae of search result it will support all lanugage which is suppored by google place api for help link is here  [Language suppored by google](https://developers.google.com/maps/faq#languagesupport)    |                                                     |
 |   country    | optional     | object   |      en         | country prop will change the country where you want to search .you can add 5 country for filter.  |
+|   coordinates    | optional     | boolean   |      en         | Coordinates props will return coordinates of selected place  |
 
 
 ### Use multiple languages
