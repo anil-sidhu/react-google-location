@@ -10,24 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/anil-sidhu/google-location.git"
   },
-  "keywords": [
-    "react",
-    "google",
-    "place",
-    "suggestion",
-    "react",
-    "google",
-    "place",
-    "npm",
-    "react",
-    "google",
-    "place",
-    "autocomplete"
-  ],
-  "author": "anil sidhu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anil-sidhu/google-location/issues"
-  },
-  "homepage": "https://github.com/anil-sidhu/google-location#readme"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
