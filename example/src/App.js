@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { GoogleComponent } from 'react-google-location' 
-const API_KEY = "AIzaSyDGwf3wXD5z0XqaolwPbRVRKGIkDnK5ql4"
+// const API_KEY = "add your google api key"
 
 class App extends Component {
   constructor(props) {
