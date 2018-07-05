@@ -76,7 +76,10 @@ Pass key and value pair in the country object like this ```` country={in|country
 
 ### Get Api Key 
 
+#####You need to enable key for google place as well google geocode also
 click [here](https://developers.google.com/places/web-service/get-api-key)
 click on the GET A KEY button 
 now select a project or create new porject.
 Click on the Next and your key is enabled. You can copy this is key and pass as a apikey :)
+
+
