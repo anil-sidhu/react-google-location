@@ -1,7 +1,7 @@
 {
   "name": "react-google-location",
-  "version": "1.0.2",
-  "description": "a simple package for google place suggestion",
+  "version": "1.0.3",
+  "description": "A simple react js package for google place suggestion",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,24 @@
     "type": "git",
     "url": "git+https://github.com/anil-sidhu/google-location.git"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+  "keywords": [
+    "react",
+    "google",
+    "place",
+    "suggestion",
+    "react",
+    "google",
+    "place",
+    "npm",
+    "react",
+    "google",
+    "place",
+    "autocomplete"
+  ],
+  "author": "anil sidhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anil-sidhu/google-location/issues"
+  },
+  "homepage": "https://github.com/anil-sidhu/google-location#readme"
 }

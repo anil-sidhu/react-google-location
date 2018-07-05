@@ -28,9 +28,3 @@ padding-left: 20px
 .style-list:hover {
   background-color: #e7e7e7;
 }
-.current-loc-ico{
-
-    height: 17px;
-    padding-right: 10px;
-
-}
