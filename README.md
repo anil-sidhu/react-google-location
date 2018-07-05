@@ -1,5 +1,15 @@
 # react-google-location
-A Simple package for use google place autocomplete in react
+A Simple package for get current location,get google place autocomplete,get coordinates of selected location in react
+
+### Features
+##### Current Location with coordinates
+##### Google location and place autocomplete
+##### Coordinates with selected google location
+##### Location fiter by country 
+##### Location result in all google supported language
+
+
+
 ## Getting Started
 Install the library:
 
