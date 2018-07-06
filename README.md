@@ -46,6 +46,8 @@ class HomeComponent extends Component {
           language={'en'}
           country={'country:in|country:us'}
           coordinates={true}
+          locationBoxStyle={'custom-style'}
+          locationListStyle={'custom-style-list'}
           onChange={(e) => { this.setState({ place: e }) }} />
       </div>
 
@@ -65,8 +67,10 @@ export default HomeComponent;
 |-----------------|----------|----------|---------------|------------------------------------------------------------------------------------------------------------------------------|
 |   apiKey    | Yes     | string   |      null         | need to get from google place api and pass as string. if key is invalid or empty result be b not found                                                                 |
 |   language    | optional     | string   |      en         | language will change the lanugae of search result it will support all lanugage which is suppored by google place api for help link is here  [Language suppored by google](https://developers.google.com/maps/faq#languagesupport)    |                                                     |
-|   country    | optional     | object   |      en         | country prop will change the country where you want to search .you can add 5 country for filter.  |
-|   coordinates    | optional     | boolean   |      en         | Coordinates props will return coordinates of selected place  |
+|   country    | optional     | object   |               | country prop will change the country where you want to search .you can add 5 country for filter.  |
+|   coordinates    | optional     | boolean   |               | Coordinates props will return coordinates of selected place  |
+|   locationBoxStyle    | optional     | string   |               | locationBoxStyle allow your to make custom style of search box   |
+|   locationListStyle    | optional     | string   |               | locationListStyle allow your to make custom style of search list   |
 
 
 ### Use multiple languages
