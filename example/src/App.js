@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { GoogleComponent } from 'react-google-location' 
-// const API_KEY = "add your google api key"
+const API_KEY = "AIzaSyDGwf3wXD5z0XqaolwPbRVRKGIkDnK5ql4"
 
 class App extends Component {
   constructor(props) {
@@ -12,6 +12,8 @@ class App extends Component {
     };
   }
   render() {
+ console.warn("test", this.state.place)
+
     return (
       <div className="App">
         <header className="App-header">

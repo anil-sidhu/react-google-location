@@ -1,0 +1,41 @@
+.style-unordered-list {
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+  .google-covert{
+        border: 1px solid #ccc;
+        box-shadow: -1px 2px 4px #ccc;
+        width: 100%; 
+}
+.location-box {
+    height: 40px;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.style-list {
+    cursor: pointer;
+    list-style: none;
+    border-bottom: 1px solid #aaa;
+    height: 40px;
+    padding-left: 20px;
+    line-height: 40px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+.style-list:hover {
+  background-color: #e7e7e7;
+}
+.current-loc-ico{
+    height: 17px;
+    padding-right: 10px;
+
+}
