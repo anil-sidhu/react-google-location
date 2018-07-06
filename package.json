@@ -1,6 +1,6 @@
 {
   "name": "react-google-location",
-  "version": "1.0.3",
+  "version": "1.1.5",
   "description": "A simple react js package for google place suggestion",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,5 @@
   "bugs": {
     "url": "https://github.com/anil-sidhu/google-location/issues"
   },
-  "homepage": "https://github.com/anil-sidhu/google-location#readme"
+  "homepage": "https://github.com/anil-sidhu/google-location"
 }

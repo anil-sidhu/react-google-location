@@ -15,21 +15,26 @@ export class GoogleComponent extends Component {
 
       },
       currentLocation: '',
-      currentCoordinates: {}
+      currentCoordinates: {},
+      liStyle: ''
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+
+    await this.setState({ liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list' })
+
     let _ico = React.createElement("img", {
       className: 'current-loc-ico',
       src: "https://www.materialui.co/materialIcons/maps/my_location_black_192x192.png",
     })
     let _current = React.createElement("li",
-      { className: 'style-list', onClick: () => this.getCurrentLocation(), },
+      { className: this.state.liStyle, onClick: () => this.getCurrentLocation(), },
       _ico, "Current Location");
     this.setState({ currentLocation: _current })
     document.addEventListener("mousedown", (e) => this.handleClickOutside(e));
   }
+
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", (e) => this.handleClickOutside(e));
@@ -59,17 +64,17 @@ export class GoogleComponent extends Component {
           if (data.status == "OK" && data.predictions.length > 0) {
             for (let loc = 0; loc < data.predictions.length; loc++) {
               child.push(React.createElement("li",
-                { className: 'style-list', onClick: () => this.arrangeList(data.predictions[loc].description), },
+                { key: loc, className: this.state.liStyle, onClick: () => this.arrangeList(data.predictions[loc].description), },
                 data.predictions[loc].description));
             }
           }
           else if (data.state == "REQUEST_DENIED") {
             child.push(React.createElement("li",
-              { className: 'style-list' }, data.error_message));
+              { className: this.state.liStyle }, data.error_message));
           }
           else {
             child.push(React.createElement("li",
-              { className: 'style-list' },
+              { className: this.state.liStyle },
               "NO Result Found"));
           }
           let collection = React.createElement("ul", { className: 'style-unordered-list' },
@@ -81,7 +86,7 @@ export class GoogleComponent extends Component {
     }
     else {
       child.push(React.createElement("li",
-        { className: 'style-list', }, "No Api Key Provided"));
+        { className: this.state.liStyle }, "No Api Key Provided"));
       let collection = React.createElement("ul", { className: 'style-unordered-list' },
         this.state.currentLocation, child
       )
@@ -150,25 +155,26 @@ export class GoogleComponent extends Component {
         this.state.returnData.coordinates = "Error"
       }
     }
-    else
-      {
-        this.state.returnData.coordinates = "Coordinates return false by props"
-      }
+    else {
+      this.state.returnData.coordinates = "Coordinates return false by props"
+    }
 
     if (this.props.onChange) {
       this.props.onChange(this.state.returnData)
     }
   }
   render() {
+    console.warn("check update")
     return (
       React.createElement("div", { class: 'location-box-cover', ref: (node) => this.setWrapperRef(node) },
 
         React.createElement("input", {
           type: "text",
-          className: 'location-box',
+          className: this.props.locationBoxStyle ? this.props.locationBoxStyle : 'location-box',
           onChange: (e) => this.arrangeValue(e.target.value),
-          placeHolder: 'Enter Location...',
-          value: this.state.place
+          placeHolder: 'Start Typing Location',
+          value: this.state.place,
+          title: this.state.place
         }
         ),
         this.state.collectionShow ?
