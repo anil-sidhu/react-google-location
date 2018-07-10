@@ -166,13 +166,13 @@ export class GoogleComponent extends Component {
   render() {
     console.warn("check update")
     return (
-      React.createElement("div", { class: 'location-box-cover', ref: (node) => this.setWrapperRef(node) },
+      React.createElement("div", { className: 'location-box-cover', ref: (node) => this.setWrapperRef(node) },
 
         React.createElement("input", {
           type: "text",
           className: this.props.locationBoxStyle ? this.props.locationBoxStyle : 'location-box',
           onChange: (e) => this.arrangeValue(e.target.value),
-          placeHolder: 'Start Typing Location',
+          placeholder: 'Start Typing Location',
           value: this.state.place,
           title: this.state.place
         }
