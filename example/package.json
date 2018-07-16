@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-google-location": "^1.1.5",
+    "react-google-location": "^1.1.7",
     "react-scripts": "1.1.4"
   },
   "scripts": {

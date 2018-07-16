@@ -1,1 +1,1 @@
-export { GoogleComponent } from '.src//GoogleComponent.js'
+export { GoogleComponent } from './src/GoogleComponent.js'
