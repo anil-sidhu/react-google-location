@@ -181,7 +181,7 @@ export class GoogleComponent extends Component {
       }
     }
     render() {
-      console.warn("check update")
+     
       return (
         React.createElement("div", { className: 'location-box-cover', ref: (node) => this.setWrapperRef(node) },
 
