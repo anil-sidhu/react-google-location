@@ -182,7 +182,7 @@ export class GoogleComponent extends Component {
           type: "text",
           className: this.props.locationBoxStyle ? this.props.locationBoxStyle : 'location-box',
           onChange: (e) => this.arrangeValue(e.target.value),
-          placeholder: 'Localização',
+          placeholder: this.props.placeholder,
           value: this.state.place,
           title: this.state.place
         }
