@@ -46,6 +46,7 @@ class HomeComponent extends Component {
           language={'en'}
           country={'country:in|country:us'}
           coordinates={true}
+          placeholder={'Start typing location'}
           locationBoxStyle={'custom-style'}
           locationListStyle={'custom-style-list'}
           onChange={(e) => { this.setState({ place: e }) }} />
