@@ -26,6 +26,10 @@ export class GoogleComponent extends Component {
 
     await this.setState({ liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list' })
 
+    if (this.props.currentLocationByDefault) {
+      this.getCurrentLocation()
+    }
+
     let _ico = React.createElement("img", {
       className: 'current-loc-ico',
       src: "https://www.materialui.co/materialIcons/maps/my_location_black_192x192.png",
