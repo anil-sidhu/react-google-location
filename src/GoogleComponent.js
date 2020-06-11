@@ -115,6 +115,8 @@ export class GoogleComponent extends Component {
       )
       return _fire.then((resp) => {
         return resp.json().then((res) => {
+          this._returnData(res.results[0].formatted_address)
+          this.setState({ collectionShow: false })
           return res
         })
       }).catch(error => {
