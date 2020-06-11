@@ -26,8 +26,12 @@ export class GoogleComponent extends Component {
 
     await this.setState({ liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list' })
 
-    if (this.props.currentLocationByDefault) {
+    if (this.props.currentLocationByDefault && !this.props.currentCoordinates) {
       this.getCurrentLocation()
+    }
+
+    if (this.props.currentCoordinates) {
+      this.getLocationByCoordinates(this.props.currentCoordinates)
     }
 
     let _ico = React.createElement("img", {
@@ -101,6 +105,22 @@ export class GoogleComponent extends Component {
         child
       )
       this.setState({ collection: collection, collectionShow: true })
+    }
+  }
+
+  getLocationByCoordinates(coordinates) {
+    if (this.props.apiKey) {
+      const address = `${coordinates.lat},${coordinates.lng}`
+      let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + address + '&key=' + this.props.apiKey
+      )
+      return _fire.then((resp) => {
+        return resp.json().then((res) => {
+          return res
+        })
+      }).catch(error => {
+        this.setState({ proxyUrl: proxyUrl })
+
+      })
     }
   }
 
