@@ -27,7 +27,7 @@ export class GoogleComponent extends Component {
     await this.setState({ liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list' })
 
     if (this.props.currentLocationByDefault && !this.props.currentCoordinates) {
-      this.getCurrentLocation(true)
+      this.getCurrentLocation({shortLocation: true})
     }
 
     if (this.props.currentCoordinates) {
@@ -142,7 +142,7 @@ export class GoogleComponent extends Component {
     }
 
   }
-  getCurrentLocation(onlyCity=false) {
+  getCurrentLocation({shortLocation = false}) {
     if (this.props.apiKey) {
       navigator.geolocation.getCurrentPosition((location) => {
 
@@ -153,7 +153,7 @@ export class GoogleComponent extends Component {
         return _fire.then((resp) => {
           return resp.json().then((res) => {
             let location = res.results[0].formatted_address
-            if (onlyCity) location = res.results[res.results.length - 2].formatted_address
+            if (shortLocation) location = res.results[res.results.length - 2].formatted_address
 
             this._returnData(location)
             this.setState({ collectionShow: false })
