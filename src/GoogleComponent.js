@@ -18,13 +18,17 @@ export class GoogleComponent extends Component {
       currentLocation: '',
       currentCoordinates: {},
       liStyle: '',
-      proxyUrl: " "
+      proxyUrl: " ",
+      placeholder: ""
     };
   }
 
   async componentDidMount() {
 
-    await this.setState({ liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list' })
+    await this.setState({ 
+      liStyle: this.props.locationListStyle ? this.props.locationListStyle : 'style-list',
+      placeholder: this.props.placeholder ? this.props.placeholder : 'Start Typing Location'
+    })
 
     let _ico = React.createElement("img", {
       className: 'current-loc-ico',
@@ -182,7 +186,7 @@ export class GoogleComponent extends Component {
           type: "text",
           className: this.props.locationBoxStyle ? this.props.locationBoxStyle : 'location-box',
           onChange: (e) => this.arrangeValue(e.target.value),
-          placeholder: this.props.placeholder,
+          placeholder: this.state.placeholder,
           value: this.state.place,
           title: this.state.place
         }
