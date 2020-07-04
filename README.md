@@ -46,6 +46,10 @@ class HomeComponent extends Component {
           language={'en'}
           country={'country:in|country:us'}
           coordinates={true}
+          currentCoordinates={{
+            "lat": 41.7151377,
+            "lng": 44.827096
+          }}
           placeholder={'Start typing location'}
           locationBoxStyle={'custom-style'}
           locationListStyle={'custom-style-list'}
@@ -72,6 +76,8 @@ export default HomeComponent;
 |   coordinates    | optional     | boolean   |               | Coordinates props will return coordinates of selected place  |
 |   locationBoxStyle    | optional     | string   |               | locationBoxStyle allow your to make custom style of search box   |
 |   locationListStyle    | optional     | string   |               | locationListStyle allow your to make custom style of search list   |
+|   currentLocationByDefault    | optional     | boolean   |               | currentLocationByDefault allow your to get your default location and set it as default value   |
+|   currentCoordinates    | optional     | object   |               | currentCoordinates will set up location from current coordinates   |
 
 
 ### Use multiple languages

@@ -30,6 +30,14 @@ export class GoogleComponent extends Component {
       placeholder: this.props.placeholder ? this.props.placeholder : 'Start Typing Location'
     })
 
+    if (this.props.currentLocationByDefault && !this.props.currentCoordinates) {
+      this.getCurrentLocation({shortLocation: true})
+    }
+
+    if (this.props.currentCoordinates) {
+      this.getLocationByCoordinates(this.props.currentCoordinates)
+    }
+
     let _ico = React.createElement("img", {
       className: 'current-loc-ico',
       src: "https://www.materialui.co/materialIcons/maps/my_location_black_192x192.png",
@@ -104,6 +112,25 @@ export class GoogleComponent extends Component {
     }
   }
 
+  getLocationByCoordinates(coordinates) {
+    if (this.props.apiKey) {
+      const address = `${coordinates.lat},${coordinates.lng}`
+      let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + address + '&key=' + this.props.apiKey
+      )
+      return _fire.then((resp) => {
+        return resp.json().then((res) => {
+          const location = res.results[res.results.length - 2].formatted_address
+          this._returnData(location)
+          this.setState({ collectionShow: false })
+          return res
+        })
+      }).catch(error => {
+        this.setState({ proxyUrl: proxyUrl })
+
+      })
+    }
+  }
+
   getCoordinates(address) {
     if (this.props.apiKey) {
       let _fire = fetch(this.state.proxyUrl + 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + this.props.apiKey
@@ -119,7 +146,7 @@ export class GoogleComponent extends Component {
     }
 
   }
-  getCurrentLocation() {
+  getCurrentLocation({shortLocation = false}) {
     if (this.props.apiKey) {
       navigator.geolocation.getCurrentPosition((location) => {
 
@@ -129,7 +156,10 @@ export class GoogleComponent extends Component {
         )
         return _fire.then((resp) => {
           return resp.json().then((res) => {
-            this._returnData(res.results[0].formatted_address)
+            let location = res.results[0].formatted_address
+            if (shortLocation) location = res.results[res.results.length - 2].formatted_address
+
+            this._returnData(location)
             this.setState({ collectionShow: false })
           })
         }).catch(error => {
